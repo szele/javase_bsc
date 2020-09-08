@@ -1,6 +1,6 @@
 # JAVA-BSC - Java SE alapok
 
-## Javasolt haladás
+## Javasolt haladás, de csak a mentoralt kepzesen!
 
 * Először nézd meg a videót! A videóban szereplő forráskódot a [demos](demos) könyvtárban találod.
 * Dolgozd fel a videóhoz tartozó írott anyagot, amelynek itt találod a tartalomjegyzékét, és a következő részekből áll:
