@@ -1,5 +1,7 @@
 package hu.training360.javasetraining.shoppingbasket;
 
+import java.util.List;
+
 public class ShoppingBasket {
 
 
@@ -18,7 +20,7 @@ public class ShoppingBasket {
 
         Double res = 0.0d;
 
-        for(Item i : basket.getItems()){
+        for(Item i : basket.sbItems()){
             res = res + i.getNettoPrice();
         }
 
@@ -29,7 +31,7 @@ public class ShoppingBasket {
 
         Double res = 0.0d;
 
-        for(Item i : basket.getItems()){
+        for(Item i : basket.sbItems()){
             res += i.getTaxAmount();
         }
 
@@ -47,16 +49,19 @@ public class ShoppingBasket {
 
     public void removeMostExpensiveItemNet(){
 
-        Item mostExpensive = basket.getItems().get(0);
+        Item mostExpensive = basket.sbItems().get(0);
 
-        for(int i = 1; i <= basket.getItems().size() - 1; i++){
+        for(int i = 1; i <= basket.sbItems().size() - 1; i++){
 
-            if(basket.getItems().get(i).getNettoPrice() > mostExpensive.getNettoPrice()){
-                mostExpensive = basket.getItems().get(i);
+            if(basket.sbItems().get(i).getNettoPrice() > mostExpensive.getNettoPrice()){
+                mostExpensive = basket.sbItems().get(i);
             }
         }
 
         basket.removeItem(mostExpensive.getBarCode());
-    }
 
+    }
+    public List<Item> getBasketItems(){
+    return basket.sbItems();
+    }
 }
