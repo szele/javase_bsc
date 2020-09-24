@@ -9,9 +9,9 @@ public class BasicHtmlElement implements HTMLElement{
 
     protected String name;
 
-    private static Map<String,String> properties = new HashMap<String, String>();
+    private static final Map<String,String> properties = new HashMap<>();
 
-    protected String getContent() { return null;};
+    protected String getContent() { return null;}
 
     public static void setProperty(String name, String value)
     {
@@ -26,22 +26,22 @@ public class BasicHtmlElement implements HTMLElement{
 
     @Override
     public String toHtml() {
-        String htmlValue = "";
+        StringBuilder htmlValue;
 
-        htmlValue = "<"+name+" ";
+        htmlValue = new StringBuilder("<" + name + " ");
         for (Map.Entry<String,String> entry : properties.entrySet())
         {
 
-            htmlValue+=entry.getKey()+"=\""+entry.getValue()+"\" ";
+            htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\" ");
         }
 
 
-        if (getContent() == null) { htmlValue += "/>"; }
+        if (getContent() == null) { htmlValue.append("/>"); }
         else
         {
-            htmlValue += ">"+getContent()+"</"+name+">\n";
+            htmlValue.append(">").append(getContent()).append("</").append(name).append(">\n");
         }
-        return htmlValue;
+        return htmlValue.toString();
     }
 
 
