@@ -2,20 +2,23 @@
 package HtmlBuilder;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class BasicHtmlElement implements HTMLElement{
 
     protected String name;
 
-    private Map<String,String> properties = new HashMap<String, String>();
+    private final Map<String,String> properties;
 
-    protected String getContent() { return null;};
-
-    protected void setProperty(String name, String value)
     {
-        properties.put(name, value);
+        properties = new HashMap<>();
+    }
+
+    protected String getContent() { return null;}
+
+    protected void setProperty(String value)
+    {
+        properties.put("id", value);
     }
 
     protected void getProperty(String name, String value)
@@ -26,22 +29,22 @@ public class BasicHtmlElement implements HTMLElement{
 
     @Override
     public String toHtml() {
-        String htmlValue = "";
+        StringBuilder htmlValue;
 
-        htmlValue = "<"+name+" ";
+        htmlValue = new StringBuilder("<" + name + " ");
         for (Map.Entry<String,String> entry : properties.entrySet())
         {
 
-            htmlValue+=entry.getKey()+"=\""+entry.getValue()+"\" ";
+            htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\" ");
         }
 
 
-        if (getContent() == null) { htmlValue += "/>"; }
+        if (getContent() == null) { htmlValue.append("/>"); }
         else
         {
-            htmlValue += ">"+getContent()+"</"+name+">\n";
+            htmlValue.append(">").append(getContent()).append("</").append(name).append(">\n");
         }
-        return htmlValue;
+        return htmlValue.toString();
     }
 
 

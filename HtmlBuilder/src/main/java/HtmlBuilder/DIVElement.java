@@ -11,5 +11,5 @@ public class DIVElement extends ContainerElement {
         name = "div";
     }
 
-    public void setId(String id) { super.setProperty("id", id); }
+    public void setId(String id) { super.setProperty(id); }
 }
