@@ -9,11 +9,11 @@ public class BasicHtmlElement implements HTMLElement{
 
     protected String name;
 
-    private Map<String,String> properties = new HashMap<String, String>();
+    private static Map<String,String> properties = new HashMap<String, String>();
 
     protected String getContent() { return null;};
 
-    public void setProperty(String name, String value)
+    public static void setProperty(String name, String value)
     {
         properties.put(name, value);
     }

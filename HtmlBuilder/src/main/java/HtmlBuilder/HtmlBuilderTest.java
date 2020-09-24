@@ -18,14 +18,16 @@ public class HtmlBuilderTest {
         DIVElement div2;
         div2 = new DIVElement();
         div2.setId("2");
-        div2.addElement("Hello HTMLBuilder Testelements Text Test 1!" );
+        div2.addElement("Hello HTMLBuilder Testelements Text Test 2!" );
         body.addElement(div2);
 
 
-        HTMLDocument document= new HTMLDocument(HTMLDocument.setEncoding("UTF-8"));
+
+        HTMLDocument  document= new HTMLDocument();
         document.setBody(body);
 
         System.out.println(document.toHtml());
+
 
     }
 
