@@ -18,7 +18,7 @@ public class BasicHtmlElement implements HTMLElement{
 
     protected void setProperty(String value)
     {
-        properties.put("id", value);
+        properties.put(" id", value);
     }
 
     protected void getProperty(String name, String value)
@@ -31,18 +31,15 @@ public class BasicHtmlElement implements HTMLElement{
     public String toHtml() {
         StringBuilder htmlValue;
 
-        htmlValue = new StringBuilder("<" + name + " ");
+        htmlValue = new StringBuilder("\n" + "<" + name);
         for (Map.Entry<String,String> entry : properties.entrySet())
         {
-
-            htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\" ");
+            htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\"");
         }
-
-
         if (getContent() == null) { htmlValue.append("/>"); }
         else
         {
-            htmlValue.append(">").append(getContent()).append("</").append(name).append(">\n");
+            htmlValue.append(">").append(getContent()).append("</").append(name).append(">" + "\n");
         }
         return htmlValue.toString();
     }

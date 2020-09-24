@@ -8,17 +8,17 @@ public class HtmlBuilderTest {
 
 
         BodyElement body = new BodyElement();
-        body.addElement("Hello HTMLBuilder  Text Test 0!" );
+        body.addElement("Ez itt a tartalom első sora!" );
 
         DIVElement div1 = new DIVElement();
         div1.setId("1");
-        div1.addElement("Hello HTMLBuilder Text Test 1!" );
+        div1.addElement("Ez itt a tartalom második sora!" );
         body.addElement(div1);
 
         DIVElement div2;
         div2 = new DIVElement();
         div2.setId("2");
-        div2.addElement("Hello HTMLBuilder Text Test 2!" );
+        div2.addElement("Ez itt a tartalom harmadik sora!" );
         body.addElement(div2);
 
 
