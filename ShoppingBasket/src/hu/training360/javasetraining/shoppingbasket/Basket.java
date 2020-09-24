@@ -1,37 +1,30 @@
 package hu.training360.javasetraining.shoppingbasket;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Basket {
 
 
-   private List<Item> items = new ArrayList<>();
+   private final List<Item> elements = new ArrayList<>();
 
 
-   public void addItem(Item item){
+    public void addItem(Item i){
 
-       items.add(item);
-   }
+       this.elements.add(i);
+    }
 
    public void removeItem(String barCode){
 
-       for(Item i : items){
-
-           if(i.getBarCode().equals(barCode)){
-               items.remove(i);
-           }
-       }
+       elements.removeIf(i -> i.getBarCode().equals(barCode));
    }
 
    public void clearBasket(){
 
-       items.clear();
+       elements.clear();
    }
 
-   public List<Item> getItems(){
-       return new ArrayList<>(items);
+   public List<Item> sbItems(){
+       return new ArrayList<>(elements);
    }
 }
