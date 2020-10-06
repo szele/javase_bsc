@@ -13,8 +13,16 @@ public class BasicHtmlElement implements HTMLElement{
     {
         properties = new HashMap<>();
     }
+    private final Map<String,String> types;
+
+    {
+        types = new HashMap<>();
+    }
+
+    public BasicHtmlElement() {    }
 
     protected String getContent() { return null;}
+
 
     protected void setProperty(String value)
     {
@@ -26,6 +34,15 @@ public class BasicHtmlElement implements HTMLElement{
         properties.put(name, value);
     }
 
+    protected void setType(String value)
+    {
+        types.put(" type", value);
+    }
+
+    protected void getType(String name, String value)
+    {
+        types.put(name, value);
+    }
 
     @Override
     public String toHtml() {
@@ -43,7 +60,5 @@ public class BasicHtmlElement implements HTMLElement{
         }
         return htmlValue.toString();
     }
-
-
 
 }
