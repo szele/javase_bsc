@@ -9,4 +9,7 @@ public class ButtonElement extends BasicHtmlElement { // ugye Buttonnak nincs ta
     public void setType(String type) { super.setType(type); }
 
     public void onClick(String whatToDo) {  super.setProperty("onClick", whatToDo);  }
+
+    public void addElement(String test) {
+    }
 }

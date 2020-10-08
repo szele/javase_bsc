@@ -23,11 +23,11 @@ public class Main {
         div2.addElement("Ez itt a tartalom harmadik sora!");
         body.addElement(div2);
 
-        ButtonElement button1;
-        button1 = new ButtonElement();
-        button1.setId("gomb1");
+        ButtonElement button1 = new ButtonElement();
+        button1.name = "button1";
+        button1.setId("1");
         button1.addElement("test");
-        button1.addElement(button1);
+        body.addElement(button1);
 
 
         HTMLDocument  document= new HTMLDocument();

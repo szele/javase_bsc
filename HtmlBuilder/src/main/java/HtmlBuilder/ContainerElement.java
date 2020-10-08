@@ -20,4 +20,7 @@ public class ContainerElement extends BasicHtmlElement {
         }
         return html.toString();
     }
+
+    protected void setProperty(String id) {
+    }
 }

@@ -24,14 +24,23 @@ public class BasicHtmlElement implements HTMLElement{
     protected String getContent() { return null;}
 
 
-    protected void setProperty(String value)
-    {
-        properties.put(" id", value);
-    }
+ //   protected void setProperty(String value)
+    // {
+    //    properties.put(" id", value);
+    // }
 
-    protected void getProperty(String name, String value)
+ //   protected void getProperty(String name, String value)
+    // {
+    //     properties.put(name, value);
+    // }
+ protected void setProperty(String name, String value)
+ {
+     properties.put(name, value);
+ }
+
+    protected void getProperty(String name)
     {
-        properties.put(name, value);
+        properties.get(name);
     }
 
     protected void setType(String value)
