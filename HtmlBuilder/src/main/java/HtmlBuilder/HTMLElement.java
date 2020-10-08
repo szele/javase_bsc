@@ -1,5 +1,3 @@
 package HtmlBuilder;
 
-public interface HTMLElement {
-    String toHtml();
-}
+public interface HTMLElement { String toHtml();}

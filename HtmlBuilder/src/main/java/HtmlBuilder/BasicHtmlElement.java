@@ -3,7 +3,8 @@ package HtmlBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BasicHtmlElement implements HTMLElement{
+public class
+BasicHtmlElement implements HTMLElement{
 
     protected String name;
     private final Map<String,String> properties;
