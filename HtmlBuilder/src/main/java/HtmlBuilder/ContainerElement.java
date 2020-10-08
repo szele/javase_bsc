@@ -6,13 +6,9 @@ import java.util.List;
 public class ContainerElement extends BasicHtmlElement {
 
     private final List<HTMLElement> elements = new ArrayList<>();
-
     public void addElement(HTMLElement element) { elements.add(element);}
-
     public void addElement(String element) { elements.add( new SimpleText(element));}
-
     protected void setProperty(String id) {    }
-
     @Override
     protected String getContent() {
         StringBuilder html = new StringBuilder();

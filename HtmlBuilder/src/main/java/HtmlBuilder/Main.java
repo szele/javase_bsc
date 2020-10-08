@@ -1,14 +1,8 @@
-
-
 package HtmlBuilder;
-
-
-import java.awt.*;
 
 public class Main {
 
     public static void main(String[] args) {
-
         BodyElement body = new BodyElement();
         body.addElement("Ez itt a tartalom első sora!");
 
@@ -23,20 +17,18 @@ public class Main {
         body.addElement(div2);
 
         ButtonElement button1 = new ButtonElement();
-        //button1.setId("button");
         button1.name = "button";
-        //button1.type("onclick", "alert");
-       // button1.getAlert("Megnyomtad a gombot!");
         button1.setProperty("onclick","alert('Ön megnyomta a gombot!')" );
         body.addElement(button1);
 
+        ButtonElement button2 = new ButtonElement();
+        button2.name = "button";
+        button2.setProperty("onclick","window.location.href='http://www.training360.hu'");
+        body.addElement(button2);
 
         HTMLDocument  document= new HTMLDocument();
         document.setBody(body);
 
         System.out.println(document.toHtml());
-
-
     }
-
 }

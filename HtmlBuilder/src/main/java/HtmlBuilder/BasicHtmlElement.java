@@ -1,8 +1,4 @@
-
 package HtmlBuilder;
-
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,21 +6,16 @@ import java.util.Map;
 public class BasicHtmlElement implements HTMLElement{
 
     protected String name;
-
     private final Map<String,String> properties;
-
     {
         properties = new HashMap<>();
     }
     private final Map<String,String> types;
-
     {
         types = new HashMap<>();
     }
-
     public BasicHtmlElement() {    }
     protected String getContent() { return name;}
-    protected void setText(String alertmessage) {}
     protected void setProperty(String name, String value)
  {
      properties.put(name, value);
@@ -33,21 +24,9 @@ public class BasicHtmlElement implements HTMLElement{
     {
         properties.get(name);
     }
-    protected void setType(String value)
-    {
-        types.put(" type", value);
-    }
-    protected void getType(String name, String value)
-    {
-        types.put(name, value);
-    }
-    protected void setAlert(String value) {
-        types.put("alertmessage", value);
-    }
     @Override
     public String toHtml() {
         StringBuilder htmlValue;
-
         htmlValue = new StringBuilder("\n" + "<" + name + " ");
         for (Map.Entry<String,String> entry : properties.entrySet())
         {

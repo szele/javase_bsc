@@ -1,11 +1,6 @@
-
-
 package HtmlBuilder;
 
-
-
 public class DIVElement extends ContainerElement {
-
     public DIVElement() {
 
         name = "div";
