@@ -23,21 +23,16 @@ public class BasicHtmlElement implements HTMLElement{
     }
 
     public BasicHtmlElement() {    }
-
     protected String getContent() { return name;}
-
     protected void setText(String alertmessage) {}
-
- protected void setProperty(String name, String value)
+    protected void setProperty(String name, String value)
  {
      properties.put(name, value);
  }
-
     protected void getProperty(String name)
     {
         properties.get(name);
     }
-
     protected void setType(String value)
     {
         types.put(" type", value);
