@@ -1,6 +1,9 @@
 
 package HtmlBuilder;
 
+
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,18 +24,10 @@ public class BasicHtmlElement implements HTMLElement{
 
     public BasicHtmlElement() {    }
 
-    protected String getContent() { return null;}
+    protected String getContent() { return name;}
 
+    protected void setText(String alertmessage) {}
 
- //   protected void setProperty(String value)
-    // {
-    //    properties.put(" id", value);
-    // }
-
- //   protected void getProperty(String name, String value)
-    // {
-    //     properties.put(name, value);
-    // }
  protected void setProperty(String name, String value)
  {
      properties.put(name, value);
@@ -47,27 +42,27 @@ public class BasicHtmlElement implements HTMLElement{
     {
         types.put(" type", value);
     }
-
     protected void getType(String name, String value)
     {
         types.put(name, value);
     }
-
+    protected void setAlert(String value) {
+        types.put("alertmessage", value);
+    }
     @Override
     public String toHtml() {
         StringBuilder htmlValue;
 
-        htmlValue = new StringBuilder("\n" + "<" + name);
+        htmlValue = new StringBuilder("\n" + "<" + name + " ");
         for (Map.Entry<String,String> entry : properties.entrySet())
         {
             htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\"");
-        }
-        if (getContent() == null) { htmlValue.append("/>"); }
+         }
+                if (getContent() == null) { htmlValue.append("/>"); }
         else
         {
             htmlValue.append(">").append(getContent()).append("</").append(name).append(">" + "\n");
         }
         return htmlValue.toString();
     }
-
 }

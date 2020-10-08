@@ -11,6 +11,8 @@ public class ContainerElement extends BasicHtmlElement {
 
     public void addElement(String element) { elements.add( new SimpleText(element));}
 
+    protected void setProperty(String id) {    }
+
     @Override
     protected String getContent() {
         StringBuilder html = new StringBuilder();
@@ -19,8 +21,5 @@ public class ContainerElement extends BasicHtmlElement {
             html.append(elem.toHtml());
         }
         return html.toString();
-    }
-
-    protected void setProperty(String id) {
     }
 }
