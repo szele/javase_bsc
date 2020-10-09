@@ -28,15 +28,15 @@ BasicHtmlElement implements HTMLElement{
     @Override
     public String toHtml() {
         StringBuilder htmlValue;
-        htmlValue = new StringBuilder("\n" + "<" + name + " ");
+        htmlValue = new StringBuilder("\n " + "<" + name); // nyitó tag
         for (Map.Entry<String,String> entry : properties.entrySet())
         {
-            htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\"");
+                  htmlValue.append(entry.getKey()).append("=\"").append(entry.getValue()).append("\"");
          }
-                if (getContent() == null) { htmlValue.append("/>"); }
+                if (getContent() == null) { htmlValue.append("/>"); } // sima záró ha nincs tag name
         else
         {
-            htmlValue.append(">").append(getContent()).append("</").append(name).append(">" + "\n");
+            htmlValue.append(">").append(getContent()).append("</").append(name).append(">" + "\n "); // záró tag
         }
         return htmlValue.toString();
     }
