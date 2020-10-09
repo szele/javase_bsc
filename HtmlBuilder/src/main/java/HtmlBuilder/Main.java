@@ -35,7 +35,6 @@ public class Main {
         FooterElement Footer = new FooterElement();
         body.addElement(Footer);
 
-
         HTMLDocument  document= new HTMLDocument();
         document.setBody(body);
 
