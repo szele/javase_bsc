@@ -1,4 +1,4 @@
-package HtmlBuilder;
+package htmlBuilder;
 
 import org.junit.jupiter.api.Test;
 

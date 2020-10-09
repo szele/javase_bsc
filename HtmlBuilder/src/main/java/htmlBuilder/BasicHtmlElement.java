@@ -1,4 +1,4 @@
-package HtmlBuilder;
+package htmlBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,24 +7,14 @@ public class
 BasicHtmlElement implements HTMLElement{
 
     protected String name;
-    private final Map<String,String> properties;
-    {
-        properties = new HashMap<>();
-    }
-    private final Map<String,String> types;
-    {
-        types = new HashMap<>();
-    }
+    private final Map<String,String> properties; { properties = new HashMap<>(); }
     public BasicHtmlElement() {    }
     protected String getContent() { return name;}
-    protected void setProperty(String name, String value)
+    protected void setProperty(String value)
  {
-     properties.put(name, value);
+     properties.put(" onclick", value);
  }
-    protected void getProperty(String name)
-    {
-        properties.get(name);
-    }
+
     @Override
     public String toHtml() {
         StringBuilder htmlValue;

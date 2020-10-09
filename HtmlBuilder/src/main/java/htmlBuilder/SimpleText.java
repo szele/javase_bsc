@@ -1,4 +1,4 @@
-package HtmlBuilder;
+package htmlBuilder;
 
 public class SimpleText implements HTMLElement {
 

@@ -1,4 +1,4 @@
-package HtmlBuilder;
+package htmlBuilder;
 
 public class Main {
 
@@ -13,7 +13,7 @@ public class Main {
         body.addElement(Header);
 
         DIVElement div1 = new DIVElement();
-        div1.setId("1");
+        div1.setId();
         div1.addElement(
                 "Magyarázat:" +
                 "Tudom, hogy nagyon ronda és funkcionálisan is nagyon béna," +
@@ -23,11 +23,11 @@ public class Main {
         body.addElement(div1);
 
         ButtonElement button1 = new ButtonElement();
-        button1.setProperty(" onclick","alert('Ön megnyomta a gombot!')" );
+        button1.setProperty("alert('Ön megnyomta a gombot!')" );
         body.addElement(button1);
 
         ButtonElement button2 = new ButtonElement();
-        button2.setProperty(" onclick","window.location.href='http://www.training360.hu'");
+        button2.setProperty("window.location.href='http://www.training360.hu'");
         body.addElement(button2);
 
         FooterElement Footer = new FooterElement();
