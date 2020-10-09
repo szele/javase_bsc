@@ -23,12 +23,10 @@ public class Main {
         body.addElement(div1);
 
         ButtonElement button1 = new ButtonElement();
-        button1.name = "button";
         button1.setProperty(" onclick","alert('Ön megnyomta a gombot!')" );
         body.addElement(button1);
 
         ButtonElement button2 = new ButtonElement();
-        button2.name = "button";
         button2.setProperty(" onclick","window.location.href='http://www.training360.hu'");
         body.addElement(button2);
 
